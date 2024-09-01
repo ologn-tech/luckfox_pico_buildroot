@@ -21,9 +21,9 @@ index 1df94f0..2e19538 100644
  #include <stdbool.h>
 -#include <wordexp.h>
 +#include <android/compat/wordexp.h>
- 
+
  #include <glib.h>
- 
+
 diff --git a/client/player.c b/client/player.c
 index 0c59db6..e807ae0 100644
 --- a/client/player.c
@@ -34,9 +34,9 @@ index 0c59db6..e807ae0 100644
  #include <sys/uio.h>
 -#include <wordexp.h>
 +#include <android/compat/wordexp.h>
- 
+
  #include <glib.h>
- 
+
 diff --git a/src/shared/shell.c b/src/shared/shell.c
 index dfda812..86eda9d 100644
 --- a/src/shared/shell.c
@@ -48,7 +48,7 @@ index dfda812..86eda9d 100644
 -#include <wordexp.h>
 +#include <android/compat/wordexp.h>
  #include <getopt.h>
- 
+
  #include <readline/readline.h>
 diff --git a/tools/btmgmt.c b/tools/btmgmt.c
 index ebef388..0cd8700 100644
@@ -61,7 +61,7 @@ index ebef388..0cd8700 100644
 -#include <wordexp.h>
 +#include <android/compat/wordexp.h>
  #include <ctype.h>
- 
+
  #include "lib/bluetooth.h"
 diff --git a/tools/obexctl.c b/tools/obexctl.c
 index 56a7691..e8aed6a 100644
@@ -74,8 +74,8 @@ index 56a7691..e8aed6a 100644
 -#include <wordexp.h>
 +#include <android/compat/wordexp.h>
  #include <ctype.h>
- 
+
  #include <glib.h>
--- 
+--
 2.34.1
 
