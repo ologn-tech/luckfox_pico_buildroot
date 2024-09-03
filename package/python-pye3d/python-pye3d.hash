@@ -1,0 +1,5 @@
+# md5, sha256 from https://pypi.org/pypi/pye3d/json
+md5  0f7da930887052a9f042fd10ab6a0eca  pye3d-0.3.2.tar.gz
+sha256  12793dd0b2926539252d6b2ba9df6b0c1774947a007661b2c1670ef73c905339  pye3d-0.3.2.tar.gz
+# Locally computed sha256 checksums
+sha256  4e0dcaf3269d494596a31e1a145264c553aed7d1f7f0c534c29a4ccb78a5ea1b  LICENSE

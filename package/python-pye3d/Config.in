@@ -1,0 +1,12 @@
+config BR2_PACKAGE_PYTHON_PYE3D
+	bool "python-pye3d"
+	depends on BR2_PACKAGE_PYTHON3
+	depends on BR2_PACKAGE_PYTHON_NUMPY_ARCH_SUPPORTS
+	select BR2_PACKAGE_EIGEN
+	select BR2_PACKAGE_PYTHON_MSGPACK
+	select BR2_PACKAGE_PYTHON_NUMPY
+	select BR2_PACKAGE_PYTHON_SORTEDCONTAINERS
+	help
+	  3D eye model.
+
+	  https://github.com/pupil-labs/pye3d-detector
