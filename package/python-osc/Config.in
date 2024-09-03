@@ -1,0 +1,7 @@
+config BR2_PACKAGE_PYTHON_OSC
+	bool "python-osc"
+	depends on BR2_PACKAGE_PYTHON3
+	help
+	  Open Sound Control server and client implementations in pure Python.
+
+	  https://github.com/attwad/python-osc

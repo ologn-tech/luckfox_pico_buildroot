@@ -1,0 +1,5 @@
+# md5, sha256 from https://pypi.org/pypi/python-osc/json
+md5  9c343b61f6ecef1797ab3a46fcf4b6d4  python_osc-1.9.0.tar.gz
+sha256  ab50f66b1a19efd5bff722f26ab6450df19cdd84ba868f08c9a33e7c78514456  python_osc-1.9.0.tar.gz
+# Locally computed sha256 checksums
+sha256  7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c  LICENSE.txt
