@@ -1,0 +1,20 @@
+diff --git a/src/pupil_detectors/CMakeLists.txt b/src/pupil_detectors/CMakeLists.txt
+index 75f16a9..56d3d85 100644
+--- a/src/pupil_detectors/CMakeLists.txt
++++ b/src/pupil_detectors/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.24)
++cmake_minimum_required(VERSION 3.22)
+ 
+ project("pupil_detector_base"
+     LANGUAGES C CXX
+diff --git a/src/pupil_detectors/detector_2d/CMakeLists.txt b/src/pupil_detectors/detector_2d/CMakeLists.txt
+index 2d4a3f0..652a59e 100644
+--- a/src/pupil_detectors/detector_2d/CMakeLists.txt
++++ b/src/pupil_detectors/detector_2d/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.24)
++cmake_minimum_required(VERSION 3.22)
+ cmake_policy(SET CMP0076 NEW)
+ 
+ project("pupil_detector_2d"
