@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-OPENCV4_VERSION = 4.10.0
+OPENCV4_VERSION = 4.10.1
 OPENCV4_SOURCE = $(OPENCV4_VERSION).tar.gz
 OPENCV4_SITE = $(call github,ologn-tech,opencv,$(OPENCV4_VERSION))
 OPENCV4_INSTALL_STAGING = YES
