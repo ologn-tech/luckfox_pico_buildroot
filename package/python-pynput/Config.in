@@ -1,0 +1,5 @@
+config BR2_PACKAGE_PYTHON_PYNPUT
+    bool "python-pynput"
+    depends on BR2_PACKAGE_PYTHON3
+    help
+      Pynput is a library that allows controlling and monitoring input devices.
