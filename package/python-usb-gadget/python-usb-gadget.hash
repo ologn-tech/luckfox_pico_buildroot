@@ -1,0 +1,7 @@
+# md5, sha256 from https://pypi.org/pypi/usb-gadget/json
+md5  802f57653c4178d9a382bb7af9cafbd4  usb_gadget-0.2.tar.gz
+sha256  d97bb66148f4aef55c183ce09cc0397012d42ae57f7ba1e77ad4bb45b749c94f  usb_gadget-0.2.tar.gz
+
+# Locally computed sha256
+md5 5186c9b6cd61a7e624b77c0ed292bd6f  LICENSE
+sha256 53e0bd41af37dfc44922fcc08669ca099f07ff719d02b587ffe2ca4a02a8bc17  LICENSE
