@@ -1,0 +1,5 @@
+config BR2_PACKAGE_PYTHON_KEYBOARD
+	bool "python-keyboard"
+	depends on BR2_PACKAGE_PYTHON3
+	help
+	  Hook and simulate keyboard events on Windows and Linux
