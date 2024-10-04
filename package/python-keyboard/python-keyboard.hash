@@ -1,0 +1,6 @@
+# md5, sha256 from https://pypi.org/pypi/keyboard/json
+md5  d0d1c7a6f34e664f5cedea9a2838da0c  keyboard-0.13.5.zip
+sha256  63ed83305955939ca5c9a73755e5cc43e8242263f5ad5fd3bb7e0b032f3d308b  keyboard-0.13.5.zip
+# Locally computed sha256 checksums
+md5  a1e87757f2ae00bf7498fcb2f85a1b42  LICENSE.txt
+sha256  2bf14a525555d05a801c2d2c28901504fb76abee7c2d7ebfb4cfc7508d7df0f7  LICENSE.txt
