@@ -1,0 +1,5 @@
+config BR2_PACKAGE_PYTHON_USB_GADGET
+    bool "python-usb-gadget"
+    depends on BR2_PACKAGE_PYTHON3
+    help
+       A python library for creating and interfacing with USB Gadgets on Linux through libcomposite
