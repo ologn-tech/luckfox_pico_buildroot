@@ -5,7 +5,7 @@
 ################################################################################
 
 OPENCV4_VERSION = f9e2b6181ec7578efca73b9e8d8bf582a5bcd3c6
-OPENCV4_SITE = https://github.com/ologn-tech/opencv
+OPENCV4_SITE = https://github.com/ologn-tech/opencv.git
 OPENCV4_SITE_METHOD = git
 OPENCV4_INSTALL_STAGING = YES
 OPENCV4_LICENSE = Apache-2.0
