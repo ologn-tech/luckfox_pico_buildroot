@@ -1,0 +1,7 @@
+config BR2_PACKAGE_RKBIN
+	bool "rkbin"
+	select BR2_PACKAGE_LUCKFOX_PICO
+	help
+	  Rockchip binarines from luckfox-pico sdk
+
+	  https://github.com/LuckfoxTECH/luckfox-pico/tree/main/sysdrv/source/uboot/rkbin
