@@ -17,7 +17,8 @@ UBOOT_CPE_ID_PRODUCT = u-boot
 UBOOT_INSTALL_IMAGES = YES
 
 # u-boot 2020.01+ needs make 4.0+
-UBOOT_DEPENDENCIES = host-pkgconf $(BR2_MAKE_HOST_DEPENDENCY)
+# UBOOT_DEPENDENCIES = host-pkgconf $(BR2_MAKE_HOST_DEPENDENCY)
+UBOOT_DEPENDENCIES = host-pkgconf $(BR2_MAKE_HOST_DEPENDENCY) rkbin
 UBOOT_MAKE = $(BR2_MAKE)
 
 ifeq ($(BR2_TARGET_UBOOT_CUSTOM_TARBALL),y)
@@ -35,9 +36,11 @@ else ifeq ($(BR2_TARGET_UBOOT_CUSTOM_SVN),y)
 UBOOT_SITE = $(call qstrip,$(BR2_TARGET_UBOOT_CUSTOM_REPO_URL))
 UBOOT_SITE_METHOD = svn
 else
-# Handle stable official U-Boot versions
-UBOOT_SITE = https://ftp.denx.de/pub/u-boot
-UBOOT_SOURCE = u-boot-$(UBOOT_VERSION).tar.bz2
+# # Handle stable official U-Boot versions
+# UBOOT_SITE = https://ftp.denx.de/pub/u-boot
+# UBOOT_SOURCE = u-boot-$(UBOOT_VERSION).tar.bz2
+UBOOT_SITE = $(LUCKFOX_PICO_DL_DIR)/git/sysdrv/source/uboot/u-boot
+UBOOT_SITE_METHOD = local
 endif
 
 ifeq ($(BR2_TARGET_UBOOT)$(BR2_TARGET_UBOOT_LATEST_VERSION),y)
@@ -353,14 +356,15 @@ define UBOOT_BUILD_CMDS
 	$(if $(UBOOT_CUSTOM_DTS_PATH),
 		cp -f $(UBOOT_CUSTOM_DTS_PATH) $(@D)/arch/$(UBOOT_ARCH)/dts/
 	)
-	$(TARGET_CONFIGURE_OPTS) \
-		PKG_CONFIG="$(PKG_CONFIG_HOST_BINARY)" \
-		PKG_CONFIG_SYSROOT_DIR="/" \
-		PKG_CONFIG_ALLOW_SYSTEM_CFLAGS=1 \
-		PKG_CONFIG_ALLOW_SYSTEM_LIBS=1 \
-		PKG_CONFIG_LIBDIR="$(HOST_DIR)/lib/pkgconfig:$(HOST_DIR)/share/pkgconfig" \
-		$(UBOOT_MAKE) -C $(@D) $(UBOOT_MAKE_OPTS) \
-		$(UBOOT_MAKE_TARGET)
+	# $(TARGET_CONFIGURE_OPTS) \
+	# 	PKG_CONFIG="$(PKG_CONFIG_HOST_BINARY)" \
+	# 	PKG_CONFIG_SYSROOT_DIR="/" \
+	# 	PKG_CONFIG_ALLOW_SYSTEM_CFLAGS=1 \
+	# 	PKG_CONFIG_ALLOW_SYSTEM_LIBS=1 \
+	# 	PKG_CONFIG_LIBDIR="$(HOST_DIR)/lib/pkgconfig:$(HOST_DIR)/share/pkgconfig" \
+	# 	$(UBOOT_MAKE) -C $(@D) $(UBOOT_MAKE_OPTS) \
+	# 	$(UBOOT_MAKE_TARGET)
+	cd $(@D); ./make.sh CROSS_COMPILE="$(TARGET_CROSS)" --spl-new
 	$(if $(BR2_TARGET_UBOOT_FORMAT_SD),
 		$(@D)/tools/mxsboot sd $(@D)/u-boot.sb $(@D)/u-boot.sd)
 	$(if $(BR2_TARGET_UBOOT_FORMAT_NAND),
@@ -380,6 +384,8 @@ define UBOOT_INSTALL_IMAGES_CMDS
 	$(foreach f,$(UBOOT_BINS), \
 			cp -dpf $(@D)/$(f) $(BINARIES_DIR)/
 	)
+	$(INSTALL) -m 0644 $(@D)/*_download_v*.bin $(BINARIES_DIR)/download.bin
+	$(INSTALL) -m 0644 $(@D)/*_idblock_v*.img $(BINARIES_DIR)/idblock.img
 	$(if $(BR2_TARGET_UBOOT_FORMAT_NAND),
 		cp -dpf $(@D)/u-boot.sb $(BINARIES_DIR))
 	$(if $(BR2_TARGET_UBOOT_SPL),
