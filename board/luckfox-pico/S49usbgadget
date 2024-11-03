@@ -92,6 +92,7 @@ configure_usb_gadget() {
 
 case $1 in
 start)
+	ifconfig lo up
 	configure_usb_gadget
 	;;
 *)
